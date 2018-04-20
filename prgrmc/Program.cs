@@ -12,7 +12,7 @@ namespace prgrmc
 
             Console.BackgroundColor = ConsoleColor.White;
 
-            StreamWriter Logging = new StreamWriter("Logging.txt");
+            StreamWriter sw = new StreamWriter("Logging.txt");
 
             Menu menu = new Menu();
             List<string> comentario = new List<string>();
@@ -20,7 +20,7 @@ namespace prgrmc
 
             Usuario Adm = new Alumno(0000, "Adm", "Administrador", 20, 5, ranking, comentario, "", "Ingenieria", 2, OLI);
 
-            menu.GenerarMenu(Adm, OLI);
+            menu.GenerarMenu(Adm, OLI, sw);
 
 
 

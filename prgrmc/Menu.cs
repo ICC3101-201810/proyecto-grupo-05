@@ -8,9 +8,8 @@ namespace prgrmc
     {
 
 
-        public void GenerarMenu(Usuario Adm, OfertasLaboralesInfo OLI)
+        public void GenerarMenu(Usuario Adm, OfertasLaboralesInfo OLI, StreamWriter sw)
         {
-            StreamWriter sw = new StreamWriter("C:\\Logging.txt");
             int CodOferta = 1;
             int CodPost = 1;
             int termino0 = 0;

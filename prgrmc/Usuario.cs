@@ -347,7 +347,7 @@ namespace prgrmc
                 {
                     Usuario usu = OLI.AceptarPostulacionOferta(of.Codigo);
                     Console.BackgroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Postulacion aceptada exitosamente! El usuario aceptado es: " + usu);
+                    Console.WriteLine("Postulacion aceptada exitosamente! El usuario aceptado es: " + usu.Rut);
                     Console.Beep();
                     Console.BackgroundColor = ConsoleColor.White;
                     return of;
