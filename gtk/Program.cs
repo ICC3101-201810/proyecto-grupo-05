@@ -1,8 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using Gtk;
 
-namespace prgrmc
+namespace gtk
 {
     class MainClass
     {
@@ -13,16 +14,18 @@ namespace prgrmc
             Console.BackgroundColor = ConsoleColor.White;
 
             StreamWriter sw = new StreamWriter("Logging.txt");
+            int CodOferta = 1;
+            int CodPost = 1;
 
-            Menu menu = new Menu();
             List<string> comentario = new List<string>();
             List<int> ranking = new List<int>();
 
             Usuario Adm = new Alumno(0000, "Adm", "Administrador", 20, 5, ranking, comentario, "", "Ingenieria", 2, OLI);
 
-            menu.GenerarMenu(Adm, OLI, sw);
-
-
+            Application.Init();
+            MainWindow w = new MainWindow(OLI, CodOferta, CodPost);
+            Application.Run();
+            w.Show();
 
         }
     }

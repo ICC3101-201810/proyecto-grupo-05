@@ -1,5 +1,5 @@
 ﻿using System;
-namespace prgrmc
+namespace gtk
 {
     public class Evento
     {
