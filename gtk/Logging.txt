@@ -1,0 +1,17 @@
+El usuario Nº 1 fue registrado
+El usuario Nº 1 inicio sesion
+Usuario Nº 1 ingrese la oferta Nº 1
+Usuario Nº 1 cerró sesión
+El usuario Nº 196868119 fue registrado
+Usuario no registrado cerró el programa
+El usuario Nº 196868119 inicio sesion
+Usuario Nº 196868119 cerró sesión
+Usuario no registrado cerró el programa
+El usuario Nº 196868119 inicio sesion
+Usuario Nº 196868119 cerró sesión
+El usuario Nº 196868119 inicio sesion
+Usuario Nº 196868119 ingrese la oferta Nº 2
+Usuario Nº 196868119 cerró sesión
+Usuario no registrado cerró el programa
+El usuario Nº 196868119 inicio sesion
+Usuario Nº 196868119 cerró el programa

@@ -128,7 +128,7 @@ namespace gtk
         {
             try
             {
-                using (Stream st = File.Open("CodOf.bin", FileMode.Create))
+                using (Stream st = File.Open("../../CodOf.bin", FileMode.Create))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(st, CodOf);
@@ -144,7 +144,7 @@ namespace gtk
         {
             try
             {
-                using (Stream st = File.Open("CodPost.bin", FileMode.Create))
+                using (Stream st = File.Open("../../CodPost.bin", FileMode.Create))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(st, CodPost);
@@ -161,7 +161,7 @@ namespace gtk
             int CodOf;
             try
             {
-                using (Stream st = File.Open("CodOf.bin", FileMode.Open))
+                using (Stream st = File.Open("../../CodOf.bin", FileMode.Open))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     CodOf = (int)bf.Deserialize(st);
@@ -180,7 +180,7 @@ namespace gtk
             int CodPost;
             try
             {
-                using (Stream st = File.Open("CodPost.bin", FileMode.Open))
+                using (Stream st = File.Open("../../CodPost.bin", FileMode.Open))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     CodPost = (int)bf.Deserialize(st);
@@ -198,7 +198,7 @@ namespace gtk
         {
             try
             {
-                using (Stream st = File.Open("usuarios.bin", FileMode.Create))
+                using (Stream st = File.Open("../../usuarios.bin", FileMode.Create))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(st, usuarios);
@@ -214,7 +214,7 @@ namespace gtk
         {
             try
             {
-                using (Stream st = File.Open("ofertas.bin", FileMode.Create))
+                using (Stream st = File.Open("../../ofertas.bin", FileMode.Create))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(st, ofertas);
@@ -231,7 +231,7 @@ namespace gtk
         {
             try
             {
-                using (Stream st = File.Open("postulaciones.bin", FileMode.Create))
+                using (Stream st = File.Open("../../postulaciones.bin", FileMode.Create))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(st, postulaciones);
@@ -248,7 +248,7 @@ namespace gtk
         {
             try
             {
-                using (Stream st = File.Open("postulacionesaceptasas.bin", FileMode.Create))
+                using (Stream st = File.Open("../../postulacionesaceptasas.bin", FileMode.Create))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     bf.Serialize(st, postulaciones);
@@ -266,7 +266,7 @@ namespace gtk
             List<Postulacion> postulaciones;
             try
             {
-                using (Stream st = File.Open("postulacionesaceptadas.bin", FileMode.Open))
+                using (Stream st = File.Open("../../postulacionesaceptadas.bin", FileMode.Open))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     postulaciones = (List<Postulacion>)bf.Deserialize(st);
@@ -285,7 +285,7 @@ namespace gtk
             List<Usuario> usuarios;
             try
             {
-                using (Stream st = File.Open("usuarios.bin", FileMode.Open))
+                using (Stream st = File.Open("../../usuarios.bin", FileMode.Open))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     usuarios = (List<Usuario>)bf.Deserialize(st);
@@ -304,7 +304,7 @@ namespace gtk
             List<Oferta> ofertas;
             try
             {
-                using (Stream st = File.Open("ofertas.bin", FileMode.Open))
+                using (Stream st = File.Open("../../ofertas.bin", FileMode.Open))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     ofertas = (List<Oferta>)bf.Deserialize(st);
@@ -323,7 +323,7 @@ namespace gtk
             List<Postulacion> postulaciones;
             try
             {
-                using (Stream st = File.Open("postulaciones.bin", FileMode.Open))
+                using (Stream st = File.Open("../../postulaciones.bin", FileMode.Open))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
                     postulaciones = (List<Postulacion>)bf.Deserialize(st);

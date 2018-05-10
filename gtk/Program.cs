@@ -13,7 +13,7 @@ namespace gtk
 
             Console.BackgroundColor = ConsoleColor.White;
 
-            StreamWriter sw = File.AppendText("Logging.txt");
+            StreamWriter sw = File.AppendText("../../Logging.txt");
 
             int CodOferta = OLI.DeserealizarCodOf();
             int CodPost = OLI.DeserealizarCodPost();
