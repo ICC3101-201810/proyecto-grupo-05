@@ -63,6 +63,7 @@ namespace gtk
                 ST.WriteLine("Usuario Nº " + Usuario.Rut + " ingrese la oferta Nº " + CodOf);
 
                 CodOf += 1;
+                OLI.SerializableCodOf(CodOf);
             }
 
             else
@@ -106,6 +107,7 @@ namespace gtk
                     System.Windows.Forms.MessageBox.Show("Usuario Nº " + Usuario.Rut + " ingresó la investigación Nº " + CodOf);
                     ST.WriteLine("Usuario Nº " + Usuario.Rut + " ingresó la investigación Nº " + CodOf);
                     CodOf += 1;
+                    OLI.SerializableCodOf(CodOf);
 
                 }
 
@@ -184,6 +186,7 @@ namespace gtk
                     System.Windows.Forms.MessageBox.Show("Postulacion ingresada exitosamente! El codigo de esta es: " + oferta.Codigo);
                     ST.WriteLine("Usuario Nº " + Usuario.Rut + " Postuló a la oferta " + oferta.Codigo + ". Código postulación: " + (CodPost));
                     CodPost += 1;
+                    OLI.SerializableCodPost(CodPost);
 
                 }
             }

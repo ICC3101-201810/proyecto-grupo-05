@@ -124,6 +124,76 @@ namespace gtk
             return null;
         }
 
+        public void SerializableCodOf(int CodOf)
+        {
+            try
+            {
+                using (Stream st = File.Open("CodOf.bin", FileMode.Create))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    bf.Serialize(st, CodOf);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error");
+            }
+        }
+
+        public void SerializableCodPost(int CodPost)
+        {
+            try
+            {
+                using (Stream st = File.Open("CodPost.bin", FileMode.Create))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    bf.Serialize(st, CodPost);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error");
+            }
+        }
+
+        public int DeserealizarCodOf()
+        {
+            int CodOf;
+            try
+            {
+                using (Stream st = File.Open("CodOf.bin", FileMode.Open))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    CodOf = (int)bf.Deserialize(st);
+                }
+                return CodOf;
+
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+        public int DeserealizarCodPost()
+        {
+            int CodPost;
+            try
+            {
+                using (Stream st = File.Open("CodPost.bin", FileMode.Open))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    CodPost = (int)bf.Deserialize(st);
+                }
+                return CodPost;
+
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
         public void SerializableUsuario(List<Usuario> usuarios)
         {
             try
@@ -136,7 +206,7 @@ namespace gtk
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Error");
+                Console.WriteLine("Error");
             }
         }
 
@@ -186,12 +256,12 @@ namespace gtk
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Error");
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
 
             }
         }
 
-        public List<Postulacion> DesearizarPostulacionAceptada()
+        public List<Postulacion> DeserealizarPostulacionAceptada()
         {
             List<Postulacion> postulaciones;
             try
@@ -210,7 +280,7 @@ namespace gtk
             }
         }
 
-        public List<Usuario> DesearizarUsuario()
+        public List<Usuario> DeserealizarUsuario()
         {
             List<Usuario> usuarios;
             try
@@ -221,7 +291,7 @@ namespace gtk
                     usuarios = (List<Usuario>)bf.Deserialize(st);
                 }
                 return usuarios;
-                    
+
             }
             catch (Exception ex)
             {
@@ -229,7 +299,7 @@ namespace gtk
             }
         }
 
-        public List<Oferta> DesearizarOferta()
+        public List<Oferta> DeserealizarOferta()
         {
             List<Oferta> ofertas;
             try
@@ -248,7 +318,7 @@ namespace gtk
             }
         }
 
-        public List<Postulacion> DesearizarPostulacion()
+        public List<Postulacion> DeserealizarPostulacion()
         {
             List<Postulacion> postulaciones;
             try
@@ -265,6 +335,15 @@ namespace gtk
             {
                 return null;
             }
+        }
+
+
+        public void Deserealizar()
+        {
+            Ofertas = DeserealizarOferta();
+            Usuarios = DeserealizarUsuario();
+            Postulaciones = DeserealizarPostulacion();
+            PostulacionesAceptadas = DeserealizarPostulacionAceptada();
         }
     }
 }

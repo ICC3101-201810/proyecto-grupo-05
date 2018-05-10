@@ -15,8 +15,14 @@ namespace gtk
 
             StreamWriter sw = File.AppendText("Logging.txt");
 
-            int CodOferta = 1;
-            int CodPost = 1;
+            int CodOferta = OLI.DeserealizarCodOf();
+            int CodPost = OLI.DeserealizarCodPost();
+            OLI.Deserealizar();
+
+
+            //int CodPost = 1;
+            //int CodOf = 1;
+
 
             //List<string> comentario = new List<string>();
             //List<string> comentario1 = new List<string>();
@@ -29,11 +35,13 @@ namespace gtk
             //OLI.Usuarios.Add(Josefina);
 
             //Evento ev = new Evento("1", "1", "1");
-            //Oferta Of = new Oferta(1, "1", 1, 1, "1", ev, Adm, true);
+            //Oferta Of = new Oferta(CodOf, "1", 1, 1, "1", ev, Adm, true);
             //OLI.Ofertas.Add(Of);
+            //CodOf += 1;
 
-            //Postulacion post = new Postulacion(1, Josefina, Of);
+            //Postulacion post = new Postulacion(CodPost, Josefina, Of);
             //OLI.Postulaciones.Add(post);
+            //CodPost += 1;
 
             //post.Oferta1.Contratado = Josefina;
             //post.Oferta1.Vacantes -= 1;
@@ -44,6 +52,8 @@ namespace gtk
             //OLI.SerializableUsuario(OLI.Usuarios);
             //OLI.SerializablePostulacion(OLI.Postulaciones);
             //OLI.SerializablePostulacionAceptadas(OLI.PostulacionesAceptadas);
+            //OLI.SerializableCodOf(CodOf);
+            //OLI.SerializableCodPost(CodPost);
 
             Application.Init();
             MainWindow w = new MainWindow(OLI, CodOferta, CodPost, sw);
