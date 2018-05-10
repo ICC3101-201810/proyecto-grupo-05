@@ -15,3 +15,6 @@ Usuario Nº 196868119 cerró sesión
 Usuario no registrado cerró el programa
 El usuario Nº 196868119 inicio sesion
 Usuario Nº 196868119 cerró el programa
+Usuario no registrado cerró el programa
+El usuario Nº 196868119 inicio sesion
+Usuario Nº 196868119 cerró sesión

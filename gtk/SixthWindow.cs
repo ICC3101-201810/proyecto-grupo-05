@@ -34,14 +34,16 @@ namespace gtk
                 Usuario aceptado = OLI.GetUsuario(rut);
                 if (aceptado != null)
                 {
+
                     Oferta ofertaaceptada = Usuario.AceptarOferta(OLI, Oferta, P, aceptado);
+
                     if (ofertaaceptada != null)
                     {
                         System.Windows.Forms.MessageBox.Show("La oferta Nº: " + ofertaaceptada.Codigo.ToString() + " fue aceptada exitosamente!");
-                        ST.WriteLine("El usuario Nº " + ofertaaceptada.Remitente.Rut + " acepto al usuario Nº " + ofertaaceptada.Contratado.Rut + " en la oferta Nº " + ofertaaceptada.Codigo);
+                        ST.WriteLine("La oferta Nº " + ofertaaceptada.Codigo.ToString() + "fue aceptada");
 
-                        this.Destroy();
                         FifthWindow w5 = new FifthWindow(OLI, CodOf, CodPost, Usuario, false, ST);
+                        this.Destroy();
                         w5.Show();
 
                     }

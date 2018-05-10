@@ -173,7 +173,7 @@ namespace gtk
 			this.notebook6 = new global::Gtk.Notebook();
 			this.notebook6.CanFocus = true;
 			this.notebook6.Name = "notebook6";
-			this.notebook6.CurrentPage = 6;
+			this.notebook6.CurrentPage = 2;
 			// Container child notebook6.Gtk.Notebook+NotebookChild
 			this.hbox13 = new global::Gtk.HBox();
 			this.hbox13.Name = "hbox13";

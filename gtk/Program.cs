@@ -30,14 +30,21 @@ namespace gtk
             //List<int> ranking = new List<int>();
             //List<int> ranking1 = new List<int>();
             //Usuario Adm = new Alumno(0000, "Adm", "Administrador", 20, 5, ranking, comentario, "", "Ingenieria", 2, OLI);
-            //Usuario Josefina = new Alumno(196868119, "Josefina", "Valenzuela", 20, 5,ranking1, comentario1, "", "Ingeniera", 3, OLI);
             //OLI.Usuarios.Add(Adm);
             //OLI.Usuarios.Add(Josefina);
-
+            //Usuario adm2 = new Alumno(1, "Adm2", "adm2", 20, 5, ranking, comentario, "", "Ingenieria", 3, OLI);
+            //Usuario Josefina = OLI.GetUsuario(196868119);
             //Evento ev = new Evento("1", "1", "1");
-            //Oferta Of = new Oferta(CodOf, "1", 1, 1, "1", ev, Adm, true);
+
+            //Oferta Of = new Oferta(CodOferta, "1", 1, 1, "1", ev, Josefina, true);
             //OLI.Ofertas.Add(Of);
-            //CodOf += 1;
+            //CodOferta += 1;
+
+            //Postulacion post = new Postulacion(CodPost, adm2, Of);
+            //List<Postulacion> posts = new List<Postulacion>();
+            //posts.Add(post);
+            //CodPost += 1;
+            //OLI.AceptarPostulacionOferta(Of, posts, adm2);
 
             //Postulacion post = new Postulacion(CodPost, Josefina, Of);
             //OLI.Postulaciones.Add(post);

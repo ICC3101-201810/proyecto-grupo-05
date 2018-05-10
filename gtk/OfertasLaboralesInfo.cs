@@ -10,10 +10,18 @@ namespace gtk
     public class OfertasLaboralesInfo
     {
 
-        public List<Postulacion> Postulaciones = new List<Postulacion>();
-        public List<Postulacion> PostulacionesAceptadas = new List<Postulacion>();
-        public List<Oferta> Ofertas = new List<Oferta>();
-        public List<Usuario> Usuarios = new List<Usuario>();
+        public List<Postulacion> Postulaciones;
+        //public List<Postulacion> PostulacionesAceptadas;
+        public List<Oferta> Ofertas;
+        public List<Usuario> Usuarios;
+
+        public OfertasLaboralesInfo()
+        {
+            Postulaciones = new List<Postulacion>();
+            //PostulacionesAceptadas = new List<Postulacion>();
+            Ofertas = new List<Oferta>();
+            Usuarios = new List<Usuario>();
+        }
 
         public void ArchivoUsuarios(List<Usuario> archivo)
         {
@@ -30,10 +38,10 @@ namespace gtk
             Postulaciones = archivo;
         }
 
-        public void ArchivoPostulacionAceptada(List<Postulacion> archivo)
-        {
-            PostulacionesAceptadas = archivo;
-        }
+        //public void ArchivoPostulacionAceptada(List<Postulacion> archivo)
+        //{
+          //  PostulacionesAceptadas = archivo;
+        //}
 
         //Sin Console.WriteLine
         public Usuario GetUsuario(int rut)
@@ -108,20 +116,26 @@ namespace gtk
         //Sin Console.WriteLine
         public Usuario AceptarPostulacionOferta(Oferta ofer, List<Postulacion> p, Usuario contratado)
         {
-
-            foreach (Postulacion i in p)
-            {
-                if (i.Usuario1.Rut == contratado.Rut)
+            try{
+                foreach (Postulacion i in p)
                 {
-                    i.Oferta1.Vacantes = i.Oferta1.Vacantes - 1;
-                    i.Oferta1.Contratado = i.Usuario1;
+                    if (i.Usuario1.Rut == contratado.Rut)
+                    {
+                        i.Oferta1.Vacantes = i.Oferta1.Vacantes - 1;
+                        i.Oferta1.Contratado = i.Usuario1;
 
-                    PostulacionesAceptadas.Add(i);
-                    SerializableUsuario(Usuarios);
-                    return i.Usuario1;
+                        SerializableUsuario(Usuarios);
+
+                        return i.Usuario1;
+                    }
                 }
+                return null;   
             }
-            return null;
+            catch(Exception ex){
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
+                return null;
+            }
+
         }
 
         public void SerializableCodOf(int CodOf)
@@ -136,7 +150,7 @@ namespace gtk
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error");
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
             }
         }
 
@@ -152,7 +166,7 @@ namespace gtk
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error");
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
             }
         }
 
@@ -171,6 +185,8 @@ namespace gtk
             }
             catch (Exception ex)
             {
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
+
                 return 0;
             }
         }
@@ -190,6 +206,8 @@ namespace gtk
             }
             catch (Exception ex)
             {
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
+
                 return 0;
             }
         }
@@ -206,7 +224,7 @@ namespace gtk
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error");
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
             }
         }
 
@@ -222,7 +240,7 @@ namespace gtk
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Error");
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
 
             }
         }
@@ -239,46 +257,11 @@ namespace gtk
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Error");
-
-            }
-        }
-
-        public void SerializablePostulacionAceptadas(List<Postulacion> postulaciones)
-        {
-            try
-            {
-                using (Stream st = File.Open("../../postulacionesaceptasas.bin", FileMode.Create))
-                {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    bf.Serialize(st, postulaciones);
-                }
-            }
-            catch (Exception ex)
-            {
                 System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
 
             }
         }
 
-        public List<Postulacion> DeserealizarPostulacionAceptada()
-        {
-            List<Postulacion> postulaciones;
-            try
-            {
-                using (Stream st = File.Open("../../postulacionesaceptadas.bin", FileMode.Open))
-                {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    postulaciones = (List<Postulacion>)bf.Deserialize(st);
-                }
-                return postulaciones;
-
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
 
         public List<Usuario> DeserealizarUsuario()
         {
@@ -295,6 +278,8 @@ namespace gtk
             }
             catch (Exception ex)
             {
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
+
                 return null;
             }
         }
@@ -314,6 +299,8 @@ namespace gtk
             }
             catch (Exception ex)
             {
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
+
                 return null;
             }
         }
@@ -333,6 +320,8 @@ namespace gtk
             }
             catch (Exception ex)
             {
+                System.Windows.Forms.MessageBox.Show("Error" + ex.Message);
+
                 return null;
             }
         }
@@ -343,7 +332,6 @@ namespace gtk
             Ofertas = DeserealizarOferta();
             Usuarios = DeserealizarUsuario();
             Postulaciones = DeserealizarPostulacion();
-            PostulacionesAceptadas = DeserealizarPostulacionAceptada();
         }
     }
 }
