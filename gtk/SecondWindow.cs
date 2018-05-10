@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+
 
 namespace gtk
 {
@@ -8,13 +10,15 @@ namespace gtk
         OfertasLaboralesInfo OLI;
         int CodOf;
         int CodPost;
+        StreamWriter ST;
 
-        public SecondWindow(OfertasLaboralesInfo oli, int codOf, int codPost) :
+        public SecondWindow(OfertasLaboralesInfo oli, int codOf, int codPost, StreamWriter st) :
                 base(Gtk.WindowType.Toplevel)
         {
             CodOf = codOf;
             CodPost = codPost;
             OLI = oli;
+            ST = st;
             Build();
         }
 
@@ -23,14 +27,15 @@ namespace gtk
         {
             
             this.Destroy();
-            ThirdWindow w3 = new ThirdWindow(OLI, CodOf, CodPost);
+            ThirdWindow w3 = new ThirdWindow(OLI, CodOf, CodPost, ST);
             w3.Show();
         }
 
         //Usuario Existente
         protected void OnNoClicked(object sender, EventArgs e)
         {
-            FourthWindow w4 = new FourthWindow(OLI, CodOf, CodPost);
+            ST.WriteLine("Usuario no registrado cerró el programa");
+            FourthWindow w4 = new FourthWindow(OLI, CodOf, CodPost, ST);
             this.Destroy();
             w4.Show();
         }

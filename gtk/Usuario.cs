@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace gtk
 {
+    [Serializable]
     public class Usuario
     {
 
@@ -37,6 +39,7 @@ namespace gtk
 
 
         //Sin Console.WriteLine();
+
         public bool IngresarUsuario(OfertasLaboralesInfo OLI)
         {
             if (OLI.GetUsuario(this.Rut) == null)
@@ -66,7 +69,7 @@ namespace gtk
                 }
 
                 of.Contratado.RankingProm = x / cant;
-                Console.BackgroundColor = ConsoleColor.Green;
+                OLI.SerializableUsuario(OLI.Usuarios);
                 return true;
             }
             return false;
@@ -79,7 +82,7 @@ namespace gtk
             if (o.Remitente.Rut == this.Rut)
             {
                 o.Estado = false;
-
+                OLI.SerializableOferta(OLI.Ofertas);
                 return true;
             }
             else
@@ -135,6 +138,8 @@ namespace gtk
 
 
 
+
+    [Serializable]
     public class Profesor : Usuario
     {
         public string Especialidad;
@@ -148,7 +153,7 @@ namespace gtk
     }
 
 
-
+    [Serializable]
     public class Alumno : Usuario
     {
         public string Carrera;

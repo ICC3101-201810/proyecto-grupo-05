@@ -1,6 +1,8 @@
 ﻿using System;
+
 namespace gtk
 {
+    [Serializable]
     public class Evento
     {
         public String Lugar;
@@ -16,7 +18,7 @@ namespace gtk
     }
 
 
-
+    [Serializable]
     public class Investigacion : Oferta
     {
         public string Area;
@@ -30,7 +32,7 @@ namespace gtk
     }
 
 
-
+    [Serializable]
     public class Oferta
     {
         public string Titulo;

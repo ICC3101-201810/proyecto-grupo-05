@@ -55,6 +55,7 @@ namespace gtk
 			this.RutUsuario.CanFocus = true;
 			this.RutUsuario.Name = "RutUsuario";
 			this.RutUsuario.IsEditable = true;
+			this.RutUsuario.InvisibleChar = '●';
 			this.table39.Add(this.RutUsuario);
 			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.table39[this.RutUsuario]));
 			w3.TopAttach = ((uint)(1));

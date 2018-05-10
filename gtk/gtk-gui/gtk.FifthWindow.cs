@@ -173,7 +173,7 @@ namespace gtk
 			this.notebook6 = new global::Gtk.Notebook();
 			this.notebook6.CanFocus = true;
 			this.notebook6.Name = "notebook6";
-			this.notebook6.CurrentPage = 4;
+			this.notebook6.CurrentPage = 6;
 			// Container child notebook6.Gtk.Notebook+NotebookChild
 			this.hbox13 = new global::Gtk.HBox();
 			this.hbox13.Name = "hbox13";
@@ -368,6 +368,7 @@ namespace gtk
 			this.Inicio1 = new global::Gtk.Entry();
 			this.Inicio1.CanFocus = true;
 			this.Inicio1.Name = "Inicio1";
+			this.Inicio1.Text = global::Mono.Unix.Catalog.GetString("DD/MM/AAAA");
 			this.Inicio1.IsEditable = true;
 			this.Inicio1.InvisibleChar = '●';
 			this.table32.Add(this.Inicio1);
@@ -397,6 +398,7 @@ namespace gtk
 			this.Termino1 = new global::Gtk.Entry();
 			this.Termino1.CanFocus = true;
 			this.Termino1.Name = "Termino1";
+			this.Termino1.Text = global::Mono.Unix.Catalog.GetString("DD/MM/AAAA");
 			this.Termino1.IsEditable = true;
 			this.Termino1.InvisibleChar = '●';
 			this.table32.Add(this.Termino1);
@@ -749,7 +751,7 @@ namespace gtk
 			this.button1.CanFocus = true;
 			this.button1.Name = "button1";
 			this.button1.UseUnderline = true;
-			this.button1.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+			this.button1.Label = global::Mono.Unix.Catalog.GetString("Ver Rankeables");
 			this.table36.Add(this.button1);
 			global::Gtk.Table.TableChild w55 = ((global::Gtk.Table.TableChild)(this.table36[this.button1]));
 			w55.LeftAttach = ((uint)(1));

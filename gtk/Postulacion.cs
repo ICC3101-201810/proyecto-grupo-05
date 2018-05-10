@@ -1,6 +1,7 @@
 ﻿using System;
 namespace gtk
 {
+    [Serializable]
     public class Postulacion
     {
         public int Codigo;

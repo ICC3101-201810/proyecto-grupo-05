@@ -113,7 +113,7 @@ namespace gtk
 			this.notebook5 = new global::Gtk.Notebook();
 			this.notebook5.CanFocus = true;
 			this.notebook5.Name = "notebook5";
-			this.notebook5.CurrentPage = 0;
+			this.notebook5.CurrentPage = 1;
 			// Container child notebook5.Gtk.Notebook+NotebookChild
 			this.table2 = new global::Gtk.Table(((uint)(3)), ((uint)(3)), false);
 			this.table2.Name = "table2";
