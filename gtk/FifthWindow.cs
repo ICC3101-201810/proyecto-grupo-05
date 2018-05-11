@@ -59,8 +59,8 @@ namespace gtk
                 Evento evento = new Evento(inicio, termino, lugar);
                 Oferta oferta = new Oferta(CodOf, titulo, remuneracion, vacantes, descripcion, evento, Usuario, true);
                 Usuario.IngresarOferta(OLI, oferta);
-                System.Windows.Forms.MessageBox.Show("Usuario Nº " + Usuario.Rut + " ingrese la oferta Nº " + CodOf);
-                ST.WriteLine("Usuario Nº " + Usuario.Rut + " ingrese la oferta Nº " + CodOf);
+                System.Windows.Forms.MessageBox.Show("Usuario Nº " + Usuario.Rut + " ingresó la oferta Nº " + CodOf);
+                ST.WriteLine("Usuario Nº " + Usuario.Rut + " ingresó la oferta Nº " + CodOf);
 
                 CodOf += 1;
                 OLI.SerializableCodOf(CodOf);
@@ -287,8 +287,8 @@ namespace gtk
                     else if (Usuario.rankear(of, estrellas, OLI) == true && r == 0)
                     {
                         bool rank = Usuario.rankear(of, estrellas, OLI);
-                        System.Windows.Forms.MessageBox.Show("El usuario Nº " + of.Contratado + " fue rankeado exitosamente");
-                        ST.WriteLine("El usuario Nº " + Usuario.Rut + " rankeo con " + estrellas + " al usuario Nº " + of.Contratado);
+                        System.Windows.Forms.MessageBox.Show("El usuario Nº " + of.Contratado.Rut + " fue rankeado exitosamente");
+                        ST.WriteLine("El usuario Nº " + Usuario.Rut + " rankeo con " + estrellas + " al usuario Nº " + of.Contratado.Rut);
 
 
                     }
@@ -336,7 +336,7 @@ namespace gtk
                 {
                     of.Contratado.Comentario.Add(com);
                     System.Windows.Forms.MessageBox.Show("Comentario ingresado correctamente");
-                    ST.WriteLine("El usuario Nº " + Usuario.Rut + " ingreso un comentario sobre el usuario Nº " + of.Contratado);
+                    ST.WriteLine("El usuario Nº " + Usuario.Rut + " ingreso un comentario sobre el usuario Nº " + of.Contratado.Rut);
                 }
             }
 
@@ -419,17 +419,17 @@ namespace gtk
                             if (po.Usuario1.GetType() == typeof(Profesor))
                             {
                                 System.Windows.Forms.MessageBox.Show("Nombre: " + po.Usuario1.Nombre + " " + po.Usuario1.Apellido +
-                                             "Rut: " + po.Usuario1.Rut +
-                                             "Ranking: " + po.Usuario1.RankingProm +
-                                             "Edad: " + po.Usuario1.Edad + " " + "Es un profesor");
+                                             " \nRut: " + po.Usuario1.Rut +
+                                             " \nRanking: " + po.Usuario1.RankingProm +
+                                             " \nEdad: " + po.Usuario1.Edad + " " + "\nEs un profesor");
                             }
 
                             else if (po.Usuario1.GetType() == typeof(Alumno))
                             {
                                 System.Windows.Forms.MessageBox.Show("Nombre: " + po.Usuario1.Nombre + " " + po.Usuario1.Apellido +
-                                             "Rut: " + po.Usuario1.Rut +
-                                             "Ranking: " + po.Usuario1.RankingProm +
-                                             "Edad: " + po.Usuario1.Edad + " " + "Es un alumno");
+                                             " \nRut: " + po.Usuario1.Rut +
+                                             " \nRanking: " + po.Usuario1.RankingProm +
+                                             " \nEdad: " + po.Usuario1.Edad + " " + "\nEs un alumno");
                             }
 
                             p.Add(po);
@@ -444,10 +444,8 @@ namespace gtk
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("No se encuentran ofertas bajo su rut");
-
+                        System.Windows.Forms.MessageBox.Show("No se encuentran postulante en esa oferta");
                     }
-
 
                 }
                 else
@@ -455,12 +453,7 @@ namespace gtk
                     System.Windows.Forms.MessageBox.Show("El codigo ingresado no existe");
                 }
             }
-
-
-
-
-           
-
+                                 
         }
 
         //Ver rankeables

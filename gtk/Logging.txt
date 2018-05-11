@@ -18,3 +18,8 @@ Usuario Nº 196868119 cerró el programa
 Usuario no registrado cerró el programa
 El usuario Nº 196868119 inicio sesion
 Usuario Nº 196868119 cerró sesión
+Usuario no registrado cerró el programa
+El usuario Nº 196868119 inicio sesion
+El usuario Nº 196868119 rankeo con 5 al usuario Nº 196868119
+El usuario Nº 196868119 ingreso un comentario sobre el usuario Nº 196868119
+Usuario Nº 196868119 cerró sesión

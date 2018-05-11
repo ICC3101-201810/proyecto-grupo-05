@@ -23,7 +23,6 @@ namespace gtk
             //int CodPost = 1;
             //int CodOf = 1;
 
-
             //List<string> comentario = new List<string>();
             //List<string> comentario1 = new List<string>();
 
