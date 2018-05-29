@@ -60,7 +60,6 @@ namespace gtk
                 {
                     System.Windows.Forms.MessageBox.Show("Este usuario ya se encuentra ingresado");
                     this.Destroy();
-                    this.Destroy();
                     SecondWindow w2 = new SecondWindow(OLI, CodOf, CodPost, ST);
                     w2.Show();
                 }

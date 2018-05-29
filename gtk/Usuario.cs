@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace gtk
 {
     [Serializable]
-    public class Usuario
+	public class Usuario
     {
 
 
@@ -135,10 +135,7 @@ namespace gtk
     }
 
 
-
-
-
-
+   
     [Serializable]
     public class Profesor : Usuario
     {

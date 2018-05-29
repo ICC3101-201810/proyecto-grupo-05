@@ -35,9 +35,10 @@ public partial class MainWindow : Gtk.Window
 
     }
 
-    protected void OnCerrarProgramaClicked(object sender, EventArgs e)
+    public void OnCerrarProgramaClicked(object sender, EventArgs e)
     {
         this.Destroy();
+		Application.Quit();
     }
 }
 

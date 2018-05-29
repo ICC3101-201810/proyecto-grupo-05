@@ -57,51 +57,12 @@ namespace gtk
                 string inicio = Inicio1.Text;
                 string termino = Termino1.Text;
                 Evento evento = new Evento(inicio, termino, lugar);
-                Oferta oferta = new Oferta(CodOf, titulo, remuneracion, vacantes, descripcion, evento, Usuario, true);
-                Usuario.IngresarOferta(OLI, oferta);
-                System.Windows.Forms.MessageBox.Show("Usuario Nº " + Usuario.Rut + " ingresó la oferta Nº " + CodOf);
-                ST.WriteLine("Usuario Nº " + Usuario.Rut + " ingresó la oferta Nº " + CodOf);
 
-                CodOf += 1;
-                OLI.SerializableCodOf(CodOf);
-            }
-
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("No ha ingresado todos los datos");
-
-            }
-
-
-        }
-
-        //Ingresar Investigación
-        protected void OnButton36Clicked(object sender, EventArgs e)
-        {
-            if (Titulo1.Text != "" && 
-                Remuneracion1.Text != "" && 
-                Vacantes1.Text != "" &&
-                Descripcion1.Text != "" &&
-                Lugar1.Text != ""&&
-                Inicio1.Text != "" &&
-                Termino1.Text != "" &&
-                Area1.Text != "" &&
+                if (Invest == true && Area1.Text != "" &&
                 Especialidad1.Text != "")
-            {
-                string titulo = Titulo1.Text;
-                int remuneracion = Convert.ToInt32(Remuneracion1.Text);
-                int vacantes = Convert.ToInt32(Vacantes1.Text);
-                string descripcion = Descripcion1.Text;
-                string lugar = Lugar1.Text;
-                string inicio = Inicio1.Text;
-                string termino = Termino1.Text;
-                Evento evento = new Evento(inicio, termino, lugar);
-                string area = Area1.Text;
-                string especialidad = Especialidad1.Text;
-
-
-                if (Invest)
                 {
+                    string area = Area1.Text;
+                    string especialidad = Especialidad1.Text;
                     Oferta oferta = new Investigacion(CodOf, titulo, remuneracion, vacantes, descripcion, evento, Usuario, area, especialidad, true);
                     Usuario.IngresarOferta(OLI, oferta);
                     System.Windows.Forms.MessageBox.Show("Usuario Nº " + Usuario.Rut + " ingresó la investigación Nº " + CodOf);
@@ -109,38 +70,128 @@ namespace gtk
                     CodOf += 1;
                     OLI.SerializableCodOf(CodOf);
 
+                    Titulo1.Text = "";
+                    Remuneracion1.Text = "";
+                    Vacantes1.Text = "";
+                    Descripcion1.Text = "";
+                    Lugar1.Text = "";
+                    Inicio1.Text = "DD/MM/AAAA";
+                    Termino1.Text = "DD/MM/AAAA";
+                    Area1.Text = "";
+                    Especialidad1.Text = "";
+
                 }
 
-                else
+                else if (Invest == false)
                 {
-                    System.Windows.Forms.MessageBox.Show("No ha marcado la casilla de Investigación");
+                    //Evento evento = new Evento(inicio, termino, lugar);
+                    Oferta oferta = new Oferta(CodOf, titulo, remuneracion, vacantes, descripcion, evento, Usuario, true);
+                    Usuario.IngresarOferta(OLI, oferta);
+                    System.Windows.Forms.MessageBox.Show("Usuario Nº " + Usuario.Rut + " ingresó la oferta Nº " + CodOf);
+                    ST.WriteLine("Usuario Nº " + Usuario.Rut + " ingresó la oferta Nº " + CodOf);
+
+                    CodOf += 1;
+                    OLI.SerializableCodOf(CodOf);
+
+                    Titulo1.Text = "";
+                    Remuneracion1.Text = "";
+                    Vacantes1.Text = "";
+                    Descripcion1.Text = "";
+                    Lugar1.Text = "";
+                    Inicio1.Text = "DD/MM/AAAA";
+                    Termino1.Text = "DD/MM/AAAA";
                 }
             }
 
             else
             {
-                System.Windows.Forms.MessageBox.Show("No ha ingresado todo lo datos");
+                System.Windows.Forms.MessageBox.Show("No ha ingresado todo lo datos o marcado la casilla de investigacion");
 
             }
+
+
+
+
+        }
+
+        //Ingresar Investigación
+      //  protected void OnButton36Clicked(object sender, EventArgs e)
+        //{
+          //  if (Titulo1.Text != "" && 
+            //    Remuneracion1.Text != "" && 
+              //  Vacantes1.Text != "" &&
+                //Descripcion1.Text != "" &&
+                //Lugar1.Text != ""&&
+                //Inicio1.Text != "" &&
+                //Termino1.Text != "" &&
+                //Area1.Text != "" &&
+                //Especialidad1.Text != "")
+            //{
+              //  string titulo = Titulo1.Text;
+                //int remuneracion = Convert.ToInt32(Remuneracion1.Text);
+               // int vacantes = Convert.ToInt32(Vacantes1.Text);
+                //string descripcion = Descripcion1.Text;
+                //string lugar = Lugar1.Text;
+                //string inicio = Inicio1.Text;
+                //string termino = Termino1.Text;
+                //Evento evento = new Evento(inicio, termino, lugar);
+                //string area = Area1.Text;
+                //string especialidad = Especialidad1.Text;
+
+
+                //if (Invest)
+                //{
+                  //  Oferta oferta = new Investigacion(CodOf, titulo, remuneracion, vacantes, descripcion, evento, Usuario, area, especialidad, true);
+                    //Usuario.IngresarOferta(OLI, oferta);
+                    //System.Windows.Forms.MessageBox.Show("Usuario Nº " + Usuario.Rut + " ingresó la investigación Nº " + CodOf);
+                    //ST.WriteLine("Usuario Nº " + Usuario.Rut + " ingresó la investigación Nº " + CodOf);
+                    //CodOf += 1;
+                    //OLI.SerializableCodOf(CodOf);
+
+                //}
+
+                //else if (Invest == false)
+                //{
+                //    //Evento evento = new Evento(inicio, termino, lugar);
+                  //  Oferta oferta = new Oferta(CodOf, titulo, remuneracion, vacantes, descripcion, evento, Usuario, true);
+                    //Usuario.IngresarOferta(OLI, oferta);
+                    //System.Windows.Forms.MessageBox.Show("Usuario Nº " + Usuario.Rut + " ingresó la oferta Nº " + CodOf);
+                    //ST.WriteLine("Usuario Nº " + Usuario.Rut + " ingresó la oferta Nº " + CodOf);
+
+                   // CodOf += 1;
+                    //OLI.SerializableCodOf(CodOf);
+                    //System.Windows.Forms.MessageBox.Show("No ha marcado la casilla de Investigación");
+                //}
+         //   }
+
+           // else
+            //{
+              //  System.Windows.Forms.MessageBox.Show("No ha ingresado todo lo datos o marcado la casilla de");
+
+//            }
 
                
 
             
-        }
+  //      }
 
 
 
 
         protected void OnVerOfertasClicked(object sender, EventArgs e)
         {
-            
+			string s = "";
+			textview10.Buffer.Text = "";
+			textview10.Editable = false;
+
             foreach (Oferta of in OLI.Ofertas)
             {
                 if (of.Estado == true)
                 {
+
                     if (of.GetType() == typeof(Investigacion))
                     {
-                        System.Windows.Forms.MessageBox.Show(of.Titulo + "\nCodigo: " + of.Codigo +
+                        s +=  ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
                                                         "\nRemuneracion: " + of.Remuneracion +
                                                         "\nVacantes: " + of.Vacantes +
                                                         "\nDescripcion: " + of.Descripcion +
@@ -148,23 +199,28 @@ namespace gtk
                                                         "\nDesde " + of.Evento.FechaInicio +
                                                         "\nHasta " + of.Evento.FechaTermino +
                                                         "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido +
-                                                        "\n Es una Investigación");
+                                                        "\n Es una Investigación\n ---------------------------------------\n");
+
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show(of.Titulo + "\nCodigo: " + of.Codigo +
+                        s +=  ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
                                                         "\nRemuneracion: " + of.Remuneracion +
                                                         "\nVacantes: " + of.Vacantes +
                                                         "\nDescripcion: " + of.Descripcion +
                                                         "\nLugar: " + of.Evento.Lugar +
                                                         "\nDesde " + of.Evento.FechaInicio +
                                                         "\nHasta " + of.Evento.FechaTermino +
-                                                        "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido);
-                    }
+                              "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
 
+					}
+                    
+                    
                 }
-            }
+				textview10.Buffer.Text = s;
                 
+            }
+   
         }
 
         //Ingresar Postulación
@@ -187,6 +243,7 @@ namespace gtk
                     ST.WriteLine("Usuario Nº " + Usuario.Rut + " Postuló a la oferta " + oferta.Codigo + ". Código postulación: " + (CodPost));
                     CodPost += 1;
                     OLI.SerializableCodPost(CodPost);
+                    CodigoPostulacion2.Text = "";
 
                 }
             }
@@ -196,7 +253,46 @@ namespace gtk
         //Mostrar Ofertas que se pueden dar de baja
         protected void OnVerBajablesClicked(object sender, EventArgs e)
         {
-            OnVerOfertasClicked(sender, e);
+			string s = "";
+            textview12.Buffer.Text = "";
+            textview12.Editable = false;
+
+            foreach (Oferta of in OLI.Ofertas)
+            {
+                if (of.Estado == true)
+                {
+
+                    if (of.GetType() == typeof(Investigacion))
+                    {
+                        s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
+                                                        "\nRemuneracion: " + of.Remuneracion +
+                                                        "\nVacantes: " + of.Vacantes +
+                                                        "\nDescripcion: " + of.Descripcion +
+                                                        "\nLugar: " + of.Evento.Lugar +
+                                                        "\nDesde " + of.Evento.FechaInicio +
+                                                        "\nHasta " + of.Evento.FechaTermino +
+                                                        "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido +
+                                                        "\n Es una Investigación\n ---------------------------------------\n");
+
+                    }
+                    else
+                    {
+                        s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
+                                                        "\nRemuneracion: " + of.Remuneracion +
+                                                        "\nVacantes: " + of.Vacantes +
+                                                        "\nDescripcion: " + of.Descripcion +
+                                                        "\nLugar: " + of.Evento.Lugar +
+                                                        "\nDesde " + of.Evento.FechaInicio +
+                                                        "\nHasta " + of.Evento.FechaTermino +
+                              "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
+
+                    }
+
+
+                }
+                textview12.Buffer.Text = s;
+
+            }
         }
 
         //Dar de baja Oferta
@@ -215,6 +311,7 @@ namespace gtk
                         System.Windows.Forms.MessageBox.Show("Oferta dada de baja exitosamente!");
 
                         ST.WriteLine("El usuario Nº " + Usuario.Rut + " dio de baja la oferta Nº  " + o.Codigo);
+                        CodigoOferta4.Text = "";
                     }
 
                     else
@@ -238,21 +335,23 @@ namespace gtk
 
         protected void OnVerRankeablesClicked(object sender, EventArgs e)
         {
+            string s = "";
             foreach (Oferta of in OLI.Ofertas)
             {
                 if (of.Estado == false && of.Remitente.Rut == Usuario.Rut)
                 {
 
-                    System.Windows.Forms.MessageBox.Show(of.Titulo + "\nCodigo: " + of.Codigo +
+                    s+= ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
                                                         "\nRemuneracion: " + of.Remuneracion +
                                                         "\nVacantes: " + of.Vacantes +
                                                         "\nDescripcion: " + of.Descripcion +
                                                         "\nLugar: " + of.Evento.Lugar +
                                                         "\nDesde " + of.Evento.FechaInicio +
                                                         "\nHasta " + of.Evento.FechaTermino +
-                                                        "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido);
+                                                         "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
                 }
             }
+            System.Windows.Forms.MessageBox.Show(s);
         }
 
         protected void OnRankearClicked(object sender, EventArgs e)
@@ -287,9 +386,10 @@ namespace gtk
                     else if (Usuario.rankear(of, estrellas, OLI) == true && r == 0)
                     {
                         bool rank = Usuario.rankear(of, estrellas, OLI);
-                        System.Windows.Forms.MessageBox.Show("El usuario Nº " + of.Contratado.Rut + " fue rankeado exitosamente");
+                        System.Windows.Forms.MessageBox.Show("El usuario Nº " + of.Contratado.Rut + " fue rankeado exitosamente en la ofera Nº " + of.Codigo);
                         ST.WriteLine("El usuario Nº " + Usuario.Rut + " rankeo con " + estrellas + " al usuario Nº " + of.Contratado.Rut);
-
+                        CodigoOferta5.Text = "";
+                        Estrellas5.Text = "";
 
                     }
                 }
@@ -307,7 +407,26 @@ namespace gtk
         //Ofertas que se pueden comentar
         protected void OnVerComentablesClicked(object sender, EventArgs e)
         {
-            OnVerRankeablesClicked(sender, e);
+			string s = "";
+			textview15.Editable = false;
+			textview15.Buffer.Text = "";
+            foreach (Oferta of in OLI.Ofertas)
+            {
+                if (of.Estado == false && of.Remitente.Rut == Usuario.Rut)
+                {
+
+                    s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
+                                                        "\nRemuneracion: " + of.Remuneracion +
+                                                        "\nVacantes: " + of.Vacantes +
+                                                        "\nDescripcion: " + of.Descripcion +
+                                                        "\nLugar: " + of.Evento.Lugar +
+                                                        "\nDesde " + of.Evento.FechaInicio +
+                                                        "\nHasta " + of.Evento.FechaTermino +
+                                                         "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
+                }
+            }
+
+			textview15.Buffer.Text = s;
 
 
         }
@@ -335,8 +454,10 @@ namespace gtk
                 else
                 {
                     of.Contratado.Comentario.Add(com);
-                    System.Windows.Forms.MessageBox.Show("Comentario ingresado correctamente");
+                    System.Windows.Forms.MessageBox.Show("Comentario ingresado xitosamente en la ofera Nº " + of.Codigo);
                     ST.WriteLine("El usuario Nº " + Usuario.Rut + " ingreso un comentario sobre el usuario Nº " + of.Contratado.Rut);
+                    CodigoOferta6.Text = "";
+                    Comentario6.Text = "";
                 }
             }
 
@@ -354,6 +475,8 @@ namespace gtk
             ST.Close();
             System.Windows.Forms.MessageBox.Show("Hasta Luego!");
             this.Destroy();
+            MainWindow w1 = new MainWindow(OLI, CodOf, CodPost, ST);
+            w1.OnCerrarProgramaClicked(sender, e);
         }
 
         protected void OnCerrarSesionClicked(object sender, EventArgs e)
@@ -368,13 +491,16 @@ namespace gtk
         //Ver Ofertas que publicó el usuario
         protected void OnVerOfertas3Clicked(object sender, EventArgs e)
         {
+			textview8.Buffer.Text = "";
+			textview8.Editable = false;
+            string s = "";
             foreach (Oferta of in OLI.Ofertas)
             {
                 if (of.Estado == true && of.Remitente.Rut == Usuario.Rut)
                 {
-                    if (of.GetType() == typeof(Investigacion))
+                    if (of.GetType() == typeof(Investigacion ))
                     {
-                        System.Windows.Forms.MessageBox.Show(of.Titulo + "\nCodigo: " + of.Codigo +
+                        s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
                                                         "\nRemuneracion: " + of.Remuneracion +
                                                         "\nVacantes: " + of.Vacantes +
                                                         "\nDescripcion: " + of.Descripcion +
@@ -382,21 +508,22 @@ namespace gtk
                                                         "\nDesde " + of.Evento.FechaInicio +
                                                         "\nHasta " + of.Evento.FechaTermino +
                                                         "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido +
-                                                        "\n Es una Investigación");
+                                                             "\n Es una Investigación\n ---------------------------------------\n");
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show(of.Titulo + "\nCodigo: " + of.Codigo +
+                        s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
                                                         "\nRemuneracion: " + of.Remuneracion +
                                                         "\nVacantes: " + of.Vacantes +
                                                         "\nDescripcion: " + of.Descripcion +
                                                         "\nLugar: " + of.Evento.Lugar +
                                                         "\nDesde " + of.Evento.FechaInicio +
                                                         "\nHasta " + of.Evento.FechaTermino +
-                                                        "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido);
+                                                             "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido+ "\n ---------------------------------------\n");
                     }
                 }
             }
+			textview8.Buffer.Text = s;
         }
 
         //Postulantes de las ofertas del usuario
@@ -459,8 +586,89 @@ namespace gtk
         //Ver rankeables
         protected void OnButton1Clicked(object sender, EventArgs e)
         {
-            OnVerRankeablesClicked(sender, e);
+			string s = "";
+			textview14.Buffer.Text = "";
+			textview14.Editable = false;
+            foreach (Oferta of in OLI.Ofertas)
+            {
+                if (of.Estado == false && of.Remitente.Rut == Usuario.Rut)
+                {
+
+                    s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
+                                                        "\nRemuneracion: " + of.Remuneracion +
+                                                        "\nVacantes: " + of.Vacantes +
+                                                        "\nDescripcion: " + of.Descripcion +
+                                                        "\nLugar: " + of.Evento.Lugar +
+                                                        "\nDesde " + of.Evento.FechaInicio +
+                                                        "\nHasta " + of.Evento.FechaTermino +
+                                                         "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
+                }
+            }
+			textview14.Buffer.Text = s;
 
         }
-    }
+
+        protected void OnCombobox3Changed(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void OnTextview2InsertAtCursor(object o, Gtk.InsertAtCursorArgs args)
+        {
+            
+        }
+
+		protected void OnButton2Clicked(object sender, EventArgs e)
+		{
+			string s = "";
+            textview16.Buffer.Text = "";
+            textview16.Editable = false;
+            foreach (Oferta of in OLI.Ofertas)
+            {
+                if (of.Remitente.Rut == Usuario.Rut)
+                {
+
+                    s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
+                                                        "\nRemuneracion: " + of.Remuneracion +
+                                                        "\nVacantes: " + of.Vacantes +
+                                                        "\nDescripcion: " + of.Descripcion +
+                                                        "\nLugar: " + of.Evento.Lugar +
+                                                        "\nDesde " + of.Evento.FechaInicio +
+                                                        "\nHasta " + of.Evento.FechaTermino +
+                                                         "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
+                }
+            }
+            textview16.Buffer.Text = s;
+		}
+
+		protected void OnVerOfertasAceptadasClicked(object sender, EventArgs e)
+		{
+			string s = "";
+            textview18.Buffer.Text = "";
+            textview18.Editable = false;
+            foreach (Oferta of in OLI.Ofertas)
+            {
+				if(of.Contratado != null)
+				{
+					if (of.Contratado.Rut == Usuario.Rut)
+                    {
+
+                        s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
+                                                            "\nRemuneracion: " + of.Remuneracion +
+                                                            "\nVacantes: " + of.Vacantes +
+                                                            "\nDescripcion: " + of.Descripcion +
+                                                            "\nLugar: " + of.Evento.Lugar +
+                                                            "\nDesde " + of.Evento.FechaInicio +
+                                                            "\nHasta " + of.Evento.FechaTermino +
+                                                             "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
+                    }
+				}
+
+            }
+            textview18.Buffer.Text = s;
+		}
+	}
+    
+
+
 }

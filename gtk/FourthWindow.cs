@@ -67,6 +67,9 @@ namespace gtk
         {
             ST.Close();
             this.Destroy();
+			MainWindow w1 = new MainWindow(this.oli, CodOf, CodPost, ST);
+			w1.OnCerrarProgramaClicked(sender, e);
+
         }
     }
 }
