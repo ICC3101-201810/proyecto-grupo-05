@@ -412,17 +412,24 @@ namespace gtk
 			textview15.Buffer.Text = "";
             foreach (Oferta of in OLI.Ofertas)
             {
-                if (of.Estado == false && of.Remitente.Rut == Usuario.Rut)
+                if (of.Estado == false)
                 {
+					if (of.Remitente.Rut == Usuario.Rut)
+					{
+						if(of.Contratado != null)
+						{
+							s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
+                                    "\nRemuneracion: " + of.Remuneracion +
+                                    "\nVacantes: " + of.Vacantes +
+                                    "\nDescripcion: " + of.Descripcion +
+                                    "\nLugar: " + of.Evento.Lugar +
+                                    "\nDesde " + of.Evento.FechaInicio +
+                                    "\nHasta " + of.Evento.FechaTermino +
+                                     "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
+						}
+					}
 
-                    s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
-                                                        "\nRemuneracion: " + of.Remuneracion +
-                                                        "\nVacantes: " + of.Vacantes +
-                                                        "\nDescripcion: " + of.Descripcion +
-                                                        "\nLugar: " + of.Evento.Lugar +
-                                                        "\nDesde " + of.Evento.FechaInicio +
-                                                        "\nHasta " + of.Evento.FechaTermino +
-                                                         "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
+
                 }
             }
 
@@ -529,6 +536,9 @@ namespace gtk
         //Postulantes de las ofertas del usuario
         protected void OnVerPostulantesClicked(object sender, EventArgs e)
         {
+			textview2.Buffer.Text = "";
+			textview2.Editable = false;
+			string s = "";
             if (CodigoOferta3.Text != "")
             {
                 int ofert = Convert.ToInt32(CodigoOferta3.Text);
@@ -537,7 +547,7 @@ namespace gtk
                 {
                     List<Postulacion> p = new List<Postulacion>();
 
-                    System.Windows.Forms.MessageBox.Show("Estos son los usuarios que postularon a su oferta:");
+					s += ("Estos son los usuarios que postularon a su oferta:" + "\n ---------------------------------------\n");
                     foreach (Postulacion po in OLI.Postulaciones)
                     {
 
@@ -545,29 +555,40 @@ namespace gtk
                         {
                             if (po.Usuario1.GetType() == typeof(Profesor))
                             {
-                                System.Windows.Forms.MessageBox.Show("Nombre: " + po.Usuario1.Nombre + " " + po.Usuario1.Apellido +
+                                s += ("Nombre: " + po.Usuario1.Nombre + " " + po.Usuario1.Apellido +
                                              " \nRut: " + po.Usuario1.Rut +
                                              " \nRanking: " + po.Usuario1.RankingProm +
-                                             " \nEdad: " + po.Usuario1.Edad + " " + "\nEs un profesor");
+								      " \nEdad: " + po.Usuario1.Edad + " " + "\nEs un profesor");
+								
                             }
 
                             else if (po.Usuario1.GetType() == typeof(Alumno))
                             {
-                                System.Windows.Forms.MessageBox.Show("Nombre: " + po.Usuario1.Nombre + " " + po.Usuario1.Apellido +
+                                s += ("Nombre: " + po.Usuario1.Nombre + " " + po.Usuario1.Apellido +
                                              " \nRut: " + po.Usuario1.Rut +
                                              " \nRanking: " + po.Usuario1.RankingProm +
-                                             " \nEdad: " + po.Usuario1.Edad + " " + "\nEs un alumno");
+								      " \nEdad: " + po.Usuario1.Edad + " " + "\nEs un alumno");
                             }
 
                             p.Add(po);
+
+							if ((po.Usuario1.Comentario.Count) > 0)
+							{
+								s += "Comentarios:\n";
+								foreach(string com in po.Usuario1.Comentario)
+								{
+									s += com + "\n";
+								}
+							}
+					        
+					        s += "\n ---------------------------------------\n";
                         }
                     }
 
                     if (p.Count != 0)
                     {
-                        this.Destroy();
-                        SixthWindow w6 = new SixthWindow(OLI, Usuario, ofer, p, CodOf, CodPost, ST);
-                        w6.Show();
+						textview2.Buffer.Text = s;
+
                     }
                     else
                     {
@@ -591,18 +612,26 @@ namespace gtk
 			textview14.Editable = false;
             foreach (Oferta of in OLI.Ofertas)
             {
-                if (of.Estado == false && of.Remitente.Rut == Usuario.Rut)
+				if (of.Estado == false)
+				{
+					if (of.Remitente.Rut == Usuario.Rut)
                 {
+						if(of.Contratado != null)
+						{
+							s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
+                                    "\nRemuneracion: " + of.Remuneracion +
+                                    "\nVacantes: " + of.Vacantes +
+                                    "\nDescripcion: " + of.Descripcion +
+                                    "\nLugar: " + of.Evento.Lugar +
+                                    "\nDesde " + of.Evento.FechaInicio +
+                                    "\nHasta " + of.Evento.FechaTermino +
+                                     "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
+						}
 
-                    s += ("\nTitulo: " + of.Titulo + "\nCodigo: " + of.Codigo +
-                                                        "\nRemuneracion: " + of.Remuneracion +
-                                                        "\nVacantes: " + of.Vacantes +
-                                                        "\nDescripcion: " + of.Descripcion +
-                                                        "\nLugar: " + of.Evento.Lugar +
-                                                        "\nDesde " + of.Evento.FechaInicio +
-                                                        "\nHasta " + of.Evento.FechaTermino +
-                                                         "\nRemitente de la oferta:" + of.Remitente.Nombre + " " + of.Remitente.Apellido + "\n ---------------------------------------\n");
-                }
+
+                    }
+				}
+					
             }
 			textview14.Buffer.Text = s;
 
@@ -666,6 +695,65 @@ namespace gtk
 
             }
             textview18.Buffer.Text = s;
+		}
+
+		protected void OnAceptarPostulanteClicked(object sender, EventArgs e)
+		{
+			if (CodigoOferta3.Text != "" && CodigoOferta3.Text != "")
+            {
+                int ofert = Convert.ToInt32(CodigoOferta3.Text);
+                Oferta ofer = OLI.GetOferta(ofert);
+				int rut = Convert.ToInt32(rutcontratado.Text);
+                Usuario aceptado = OLI.GetUsuario(rut);
+				List<Postulacion> p = new List<Postulacion>();
+                if (ofer != null)
+				{
+					foreach (Postulacion po in OLI.Postulaciones)
+                    {
+                        if (po.Oferta1.Codigo == ofer.Codigo)
+                        {
+
+                            p.Add(po);
+                        }
+                    }
+				}                
+
+				if (ofer != null && aceptado != null)
+				{
+					if(ofer.Remitente.Rut == Usuario.Rut)
+					{
+						Oferta ofertaaceptada = Usuario.AceptarOferta(OLI, ofer, p, aceptado);
+
+                        if (ofertaaceptada != null)
+                        {
+                            System.Windows.Forms.MessageBox.Show("La oferta Nº: " + ofertaaceptada.Codigo.ToString() + " fue aceptada exitosamente!");
+                            ST.WriteLine("La oferta Nº " + ofertaaceptada.Codigo.ToString() + "fue aceptada");
+                        }
+
+                        else
+                        {
+                            System.Windows.Forms.MessageBox.Show("El rut ingresado no corresponde al de un postulante");
+
+                        }
+					}
+					else
+					{
+						System.Windows.Forms.MessageBox.Show("Usted no es el remitente de esa oferta");
+
+					}
+
+
+				}
+                				
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("El rut ingresado o el codigo de la oferta no corresponde");
+
+                }
+
+                
+				
+			}
 		}
 	}
     

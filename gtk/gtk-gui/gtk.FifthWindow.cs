@@ -96,9 +96,19 @@ namespace gtk
 
 		private global::Gtk.Table table8;
 
+		private global::Gtk.Button AceptarPostulante;
+
 		private global::Gtk.ScrolledWindow GtkScrolledWindow2;
 
 		private global::Gtk.TextView textview8;
+
+		private global::Gtk.ScrolledWindow GtkScrolledWindow7;
+
+		private global::Gtk.TextView textview2;
+
+		private global::Gtk.Label rc;
+
+		private global::Gtk.Entry rutcontratado;
 
 		private global::Gtk.VBox vbox55;
 
@@ -207,7 +217,7 @@ namespace gtk
 			this.notebook6 = new global::Gtk.Notebook();
 			this.notebook6.CanFocus = true;
 			this.notebook6.Name = "notebook6";
-			this.notebook6.CurrentPage = 6;
+			this.notebook6.CurrentPage = 2;
 			// Container child notebook6.Gtk.Notebook+NotebookChild
 			this.hbox13 = new global::Gtk.HBox();
 			this.hbox13.Name = "hbox13";
@@ -630,10 +640,24 @@ namespace gtk
 			this.notebook6.SetTabLabel(this.table34, this.label62);
 			this.label62.ShowAll();
 			// Container child notebook6.Gtk.Notebook+NotebookChild
-			this.table8 = new global::Gtk.Table(((uint)(3)), ((uint)(3)), false);
+			this.table8 = new global::Gtk.Table(((uint)(4)), ((uint)(3)), false);
 			this.table8.Name = "table8";
 			this.table8.RowSpacing = ((uint)(6));
 			this.table8.ColumnSpacing = ((uint)(6));
+			// Container child table8.Gtk.Table+TableChild
+			this.AceptarPostulante = new global::Gtk.Button();
+			this.AceptarPostulante.CanFocus = true;
+			this.AceptarPostulante.Name = "AceptarPostulante";
+			this.AceptarPostulante.UseUnderline = true;
+			this.AceptarPostulante.Label = global::Mono.Unix.Catalog.GetString("Aceptar postulante");
+			this.table8.Add(this.AceptarPostulante);
+			global::Gtk.Table.TableChild w43 = ((global::Gtk.Table.TableChild)(this.table8[this.AceptarPostulante]));
+			w43.TopAttach = ((uint)(3));
+			w43.BottomAttach = ((uint)(4));
+			w43.LeftAttach = ((uint)(2));
+			w43.RightAttach = ((uint)(3));
+			w43.XOptions = ((global::Gtk.AttachOptions)(4));
+			w43.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table8.Gtk.Table+TableChild
 			this.GtkScrolledWindow2 = new global::Gtk.ScrolledWindow();
 			this.GtkScrolledWindow2.Name = "GtkScrolledWindow2";
@@ -644,10 +668,50 @@ namespace gtk
 			this.textview8.Name = "textview8";
 			this.GtkScrolledWindow2.Add(this.textview8);
 			this.table8.Add(this.GtkScrolledWindow2);
-			global::Gtk.Table.TableChild w44 = ((global::Gtk.Table.TableChild)(this.table8[this.GtkScrolledWindow2]));
-			w44.TopAttach = ((uint)(2));
-			w44.BottomAttach = ((uint)(3));
-			w44.XOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w45 = ((global::Gtk.Table.TableChild)(this.table8[this.GtkScrolledWindow2]));
+			w45.TopAttach = ((uint)(2));
+			w45.BottomAttach = ((uint)(3));
+			w45.XOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table8.Gtk.Table+TableChild
+			this.GtkScrolledWindow7 = new global::Gtk.ScrolledWindow();
+			this.GtkScrolledWindow7.Name = "GtkScrolledWindow7";
+			this.GtkScrolledWindow7.ShadowType = ((global::Gtk.ShadowType)(1));
+			// Container child GtkScrolledWindow7.Gtk.Container+ContainerChild
+			this.textview2 = new global::Gtk.TextView();
+			this.textview2.CanFocus = true;
+			this.textview2.Name = "textview2";
+			this.GtkScrolledWindow7.Add(this.textview2);
+			this.table8.Add(this.GtkScrolledWindow7);
+			global::Gtk.Table.TableChild w47 = ((global::Gtk.Table.TableChild)(this.table8[this.GtkScrolledWindow7]));
+			w47.TopAttach = ((uint)(2));
+			w47.BottomAttach = ((uint)(3));
+			w47.LeftAttach = ((uint)(1));
+			w47.RightAttach = ((uint)(2));
+			w47.XOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table8.Gtk.Table+TableChild
+			this.rc = new global::Gtk.Label();
+			this.rc.Name = "rc";
+			this.rc.LabelProp = global::Mono.Unix.Catalog.GetString("Ingrese el rut del usuario que desea aceptar");
+			this.table8.Add(this.rc);
+			global::Gtk.Table.TableChild w48 = ((global::Gtk.Table.TableChild)(this.table8[this.rc]));
+			w48.TopAttach = ((uint)(3));
+			w48.BottomAttach = ((uint)(4));
+			w48.XOptions = ((global::Gtk.AttachOptions)(4));
+			w48.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table8.Gtk.Table+TableChild
+			this.rutcontratado = new global::Gtk.Entry();
+			this.rutcontratado.CanFocus = true;
+			this.rutcontratado.Name = "rutcontratado";
+			this.rutcontratado.IsEditable = true;
+			this.rutcontratado.InvisibleChar = '●';
+			this.table8.Add(this.rutcontratado);
+			global::Gtk.Table.TableChild w49 = ((global::Gtk.Table.TableChild)(this.table8[this.rutcontratado]));
+			w49.TopAttach = ((uint)(3));
+			w49.BottomAttach = ((uint)(4));
+			w49.LeftAttach = ((uint)(1));
+			w49.RightAttach = ((uint)(2));
+			w49.XOptions = ((global::Gtk.AttachOptions)(4));
+			w49.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table8.Gtk.Table+TableChild
 			this.vbox55 = new global::Gtk.VBox();
 			this.vbox55.Name = "vbox55";
@@ -657,14 +721,14 @@ namespace gtk
 			this.label193.Name = "label193";
 			this.label193.LabelProp = global::Mono.Unix.Catalog.GetString("Código Oferta");
 			this.vbox55.Add(this.label193);
-			global::Gtk.Box.BoxChild w45 = ((global::Gtk.Box.BoxChild)(this.vbox55[this.label193]));
-			w45.Position = 0;
-			w45.Fill = false;
+			global::Gtk.Box.BoxChild w50 = ((global::Gtk.Box.BoxChild)(this.vbox55[this.label193]));
+			w50.Position = 0;
+			w50.Fill = false;
 			this.table8.Add(this.vbox55);
-			global::Gtk.Table.TableChild w46 = ((global::Gtk.Table.TableChild)(this.table8[this.vbox55]));
-			w46.TopAttach = ((uint)(1));
-			w46.BottomAttach = ((uint)(2));
-			w46.YOptions = ((global::Gtk.AttachOptions)(0));
+			global::Gtk.Table.TableChild w51 = ((global::Gtk.Table.TableChild)(this.table8[this.vbox55]));
+			w51.TopAttach = ((uint)(1));
+			w51.BottomAttach = ((uint)(2));
+			w51.YOptions = ((global::Gtk.AttachOptions)(0));
 			// Container child table8.Gtk.Table+TableChild
 			this.vbox57 = new global::Gtk.VBox();
 			this.vbox57.Name = "vbox57";
@@ -676,17 +740,16 @@ namespace gtk
 			this.CodigoOferta3.IsEditable = true;
 			this.CodigoOferta3.InvisibleChar = '●';
 			this.vbox57.Add(this.CodigoOferta3);
-			global::Gtk.Box.BoxChild w47 = ((global::Gtk.Box.BoxChild)(this.vbox57[this.CodigoOferta3]));
-			w47.Position = 0;
-			w47.Fill = false;
+			global::Gtk.Box.BoxChild w52 = ((global::Gtk.Box.BoxChild)(this.vbox57[this.CodigoOferta3]));
+			w52.Position = 0;
+			w52.Fill = false;
 			this.table8.Add(this.vbox57);
-			global::Gtk.Table.TableChild w48 = ((global::Gtk.Table.TableChild)(this.table8[this.vbox57]));
-			w48.TopAttach = ((uint)(1));
-			w48.BottomAttach = ((uint)(2));
-			w48.LeftAttach = ((uint)(1));
-			w48.RightAttach = ((uint)(2));
-			w48.XOptions = ((global::Gtk.AttachOptions)(4));
-			w48.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w53 = ((global::Gtk.Table.TableChild)(this.table8[this.vbox57]));
+			w53.TopAttach = ((uint)(1));
+			w53.BottomAttach = ((uint)(2));
+			w53.LeftAttach = ((uint)(1));
+			w53.RightAttach = ((uint)(2));
+			w53.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table8.Gtk.Table+TableChild
 			this.vbox61 = new global::Gtk.VBox();
 			this.vbox61.Name = "vbox61";
@@ -698,16 +761,15 @@ namespace gtk
 			this.VerOfertas3.UseUnderline = true;
 			this.VerOfertas3.Label = global::Mono.Unix.Catalog.GetString("Ver sus Ofertas");
 			this.vbox61.Add(this.VerOfertas3);
-			global::Gtk.Box.BoxChild w49 = ((global::Gtk.Box.BoxChild)(this.vbox61[this.VerOfertas3]));
-			w49.Position = 0;
-			w49.Expand = false;
-			w49.Fill = false;
+			global::Gtk.Box.BoxChild w54 = ((global::Gtk.Box.BoxChild)(this.vbox61[this.VerOfertas3]));
+			w54.Position = 0;
+			w54.Fill = false;
 			this.table8.Add(this.vbox61);
-			global::Gtk.Table.TableChild w50 = ((global::Gtk.Table.TableChild)(this.table8[this.vbox61]));
-			w50.LeftAttach = ((uint)(1));
-			w50.RightAttach = ((uint)(2));
-			w50.XOptions = ((global::Gtk.AttachOptions)(4));
-			w50.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w55 = ((global::Gtk.Table.TableChild)(this.table8[this.vbox61]));
+			w55.LeftAttach = ((uint)(1));
+			w55.RightAttach = ((uint)(2));
+			w55.XOptions = ((global::Gtk.AttachOptions)(4));
+			w55.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table8.Gtk.Table+TableChild
 			this.VerPostulantes = new global::Gtk.Button();
 			this.VerPostulantes.CanFocus = true;
@@ -715,16 +777,15 @@ namespace gtk
 			this.VerPostulantes.UseUnderline = true;
 			this.VerPostulantes.Label = global::Mono.Unix.Catalog.GetString("Ver Postulantes");
 			this.table8.Add(this.VerPostulantes);
-			global::Gtk.Table.TableChild w51 = ((global::Gtk.Table.TableChild)(this.table8[this.VerPostulantes]));
-			w51.TopAttach = ((uint)(1));
-			w51.BottomAttach = ((uint)(2));
-			w51.LeftAttach = ((uint)(2));
-			w51.RightAttach = ((uint)(3));
-			w51.XOptions = ((global::Gtk.AttachOptions)(4));
-			w51.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w56 = ((global::Gtk.Table.TableChild)(this.table8[this.VerPostulantes]));
+			w56.TopAttach = ((uint)(1));
+			w56.BottomAttach = ((uint)(2));
+			w56.LeftAttach = ((uint)(2));
+			w56.RightAttach = ((uint)(3));
+			w56.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.notebook6.Add(this.table8);
-			global::Gtk.Notebook.NotebookChild w52 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table8]));
-			w52.Position = 2;
+			global::Gtk.Notebook.NotebookChild w57 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table8]));
+			w57.Position = 2;
 			// Notebook tab
 			this.label63 = new global::Gtk.Label();
 			this.label63.Name = "label63";
@@ -743,13 +804,13 @@ namespace gtk
 			this.CodigoOferta4.IsEditable = true;
 			this.CodigoOferta4.InvisibleChar = '●';
 			this.table35.Add(this.CodigoOferta4);
-			global::Gtk.Table.TableChild w53 = ((global::Gtk.Table.TableChild)(this.table35[this.CodigoOferta4]));
-			w53.TopAttach = ((uint)(1));
-			w53.BottomAttach = ((uint)(2));
-			w53.LeftAttach = ((uint)(1));
-			w53.RightAttach = ((uint)(2));
-			w53.XOptions = ((global::Gtk.AttachOptions)(0));
-			w53.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w58 = ((global::Gtk.Table.TableChild)(this.table35[this.CodigoOferta4]));
+			w58.TopAttach = ((uint)(1));
+			w58.BottomAttach = ((uint)(2));
+			w58.LeftAttach = ((uint)(1));
+			w58.RightAttach = ((uint)(2));
+			w58.XOptions = ((global::Gtk.AttachOptions)(0));
+			w58.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table35.Gtk.Table+TableChild
 			this.DarDeBaja = new global::Gtk.Button();
 			this.DarDeBaja.CanFocus = true;
@@ -757,13 +818,13 @@ namespace gtk
 			this.DarDeBaja.UseUnderline = true;
 			this.DarDeBaja.Label = global::Mono.Unix.Catalog.GetString("Dar de baja Oferta");
 			this.table35.Add(this.DarDeBaja);
-			global::Gtk.Table.TableChild w54 = ((global::Gtk.Table.TableChild)(this.table35[this.DarDeBaja]));
-			w54.TopAttach = ((uint)(1));
-			w54.BottomAttach = ((uint)(2));
-			w54.LeftAttach = ((uint)(2));
-			w54.RightAttach = ((uint)(3));
-			w54.XOptions = ((global::Gtk.AttachOptions)(0));
-			w54.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w59 = ((global::Gtk.Table.TableChild)(this.table35[this.DarDeBaja]));
+			w59.TopAttach = ((uint)(1));
+			w59.BottomAttach = ((uint)(2));
+			w59.LeftAttach = ((uint)(2));
+			w59.RightAttach = ((uint)(3));
+			w59.XOptions = ((global::Gtk.AttachOptions)(0));
+			w59.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table35.Gtk.Table+TableChild
 			this.GtkScrolledWindow1 = new global::Gtk.ScrolledWindow();
 			this.GtkScrolledWindow1.Name = "GtkScrolledWindow1";
@@ -774,19 +835,19 @@ namespace gtk
 			this.textview12.Name = "textview12";
 			this.GtkScrolledWindow1.Add(this.textview12);
 			this.table35.Add(this.GtkScrolledWindow1);
-			global::Gtk.Table.TableChild w56 = ((global::Gtk.Table.TableChild)(this.table35[this.GtkScrolledWindow1]));
-			w56.TopAttach = ((uint)(2));
-			w56.BottomAttach = ((uint)(3));
-			w56.XOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w61 = ((global::Gtk.Table.TableChild)(this.table35[this.GtkScrolledWindow1]));
+			w61.TopAttach = ((uint)(2));
+			w61.BottomAttach = ((uint)(3));
+			w61.XOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table35.Gtk.Table+TableChild
 			this.label180 = new global::Gtk.Label();
 			this.label180.Name = "label180";
 			this.label180.LabelProp = global::Mono.Unix.Catalog.GetString("Ingrese el código de la oferta que desea dar de baja");
 			this.table35.Add(this.label180);
-			global::Gtk.Table.TableChild w57 = ((global::Gtk.Table.TableChild)(this.table35[this.label180]));
-			w57.TopAttach = ((uint)(1));
-			w57.BottomAttach = ((uint)(2));
-			w57.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w62 = ((global::Gtk.Table.TableChild)(this.table35[this.label180]));
+			w62.TopAttach = ((uint)(1));
+			w62.BottomAttach = ((uint)(2));
+			w62.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table35.Gtk.Table+TableChild
 			this.VerBajables = new global::Gtk.Button();
 			this.VerBajables.CanFocus = true;
@@ -794,14 +855,14 @@ namespace gtk
 			this.VerBajables.UseUnderline = true;
 			this.VerBajables.Label = global::Mono.Unix.Catalog.GetString("Ver Ofertas");
 			this.table35.Add(this.VerBajables);
-			global::Gtk.Table.TableChild w58 = ((global::Gtk.Table.TableChild)(this.table35[this.VerBajables]));
-			w58.LeftAttach = ((uint)(1));
-			w58.RightAttach = ((uint)(2));
-			w58.XOptions = ((global::Gtk.AttachOptions)(4));
-			w58.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w63 = ((global::Gtk.Table.TableChild)(this.table35[this.VerBajables]));
+			w63.LeftAttach = ((uint)(1));
+			w63.RightAttach = ((uint)(2));
+			w63.XOptions = ((global::Gtk.AttachOptions)(4));
+			w63.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.notebook6.Add(this.table35);
-			global::Gtk.Notebook.NotebookChild w59 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table35]));
-			w59.Position = 3;
+			global::Gtk.Notebook.NotebookChild w64 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table35]));
+			w64.Position = 3;
 			// Notebook tab
 			this.label64 = new global::Gtk.Label();
 			this.label64.Name = "label64";
@@ -820,11 +881,11 @@ namespace gtk
 			this.button1.UseUnderline = true;
 			this.button1.Label = global::Mono.Unix.Catalog.GetString("Ver Rankeables");
 			this.table36.Add(this.button1);
-			global::Gtk.Table.TableChild w60 = ((global::Gtk.Table.TableChild)(this.table36[this.button1]));
-			w60.LeftAttach = ((uint)(1));
-			w60.RightAttach = ((uint)(2));
-			w60.XOptions = ((global::Gtk.AttachOptions)(4));
-			w60.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w65 = ((global::Gtk.Table.TableChild)(this.table36[this.button1]));
+			w65.LeftAttach = ((uint)(1));
+			w65.RightAttach = ((uint)(2));
+			w65.XOptions = ((global::Gtk.AttachOptions)(4));
+			w65.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table36.Gtk.Table+TableChild
 			this.CodigoOferta5 = new global::Gtk.Entry();
 			this.CodigoOferta5.CanFocus = true;
@@ -832,13 +893,13 @@ namespace gtk
 			this.CodigoOferta5.IsEditable = true;
 			this.CodigoOferta5.InvisibleChar = '●';
 			this.table36.Add(this.CodigoOferta5);
-			global::Gtk.Table.TableChild w61 = ((global::Gtk.Table.TableChild)(this.table36[this.CodigoOferta5]));
-			w61.TopAttach = ((uint)(1));
-			w61.BottomAttach = ((uint)(2));
-			w61.LeftAttach = ((uint)(1));
-			w61.RightAttach = ((uint)(2));
-			w61.XOptions = ((global::Gtk.AttachOptions)(0));
-			w61.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w66 = ((global::Gtk.Table.TableChild)(this.table36[this.CodigoOferta5]));
+			w66.TopAttach = ((uint)(1));
+			w66.BottomAttach = ((uint)(2));
+			w66.LeftAttach = ((uint)(1));
+			w66.RightAttach = ((uint)(2));
+			w66.XOptions = ((global::Gtk.AttachOptions)(0));
+			w66.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table36.Gtk.Table+TableChild
 			this.Estrellas5 = new global::Gtk.Entry();
 			this.Estrellas5.CanFocus = true;
@@ -846,13 +907,13 @@ namespace gtk
 			this.Estrellas5.IsEditable = true;
 			this.Estrellas5.InvisibleChar = '●';
 			this.table36.Add(this.Estrellas5);
-			global::Gtk.Table.TableChild w62 = ((global::Gtk.Table.TableChild)(this.table36[this.Estrellas5]));
-			w62.TopAttach = ((uint)(2));
-			w62.BottomAttach = ((uint)(3));
-			w62.LeftAttach = ((uint)(1));
-			w62.RightAttach = ((uint)(2));
-			w62.XOptions = ((global::Gtk.AttachOptions)(0));
-			w62.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w67 = ((global::Gtk.Table.TableChild)(this.table36[this.Estrellas5]));
+			w67.TopAttach = ((uint)(2));
+			w67.BottomAttach = ((uint)(3));
+			w67.LeftAttach = ((uint)(1));
+			w67.RightAttach = ((uint)(2));
+			w67.XOptions = ((global::Gtk.AttachOptions)(0));
+			w67.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table36.Gtk.Table+TableChild
 			this.GtkScrolledWindow3 = new global::Gtk.ScrolledWindow();
 			this.GtkScrolledWindow3.Name = "GtkScrolledWindow3";
@@ -863,28 +924,28 @@ namespace gtk
 			this.textview14.Name = "textview14";
 			this.GtkScrolledWindow3.Add(this.textview14);
 			this.table36.Add(this.GtkScrolledWindow3);
-			global::Gtk.Table.TableChild w64 = ((global::Gtk.Table.TableChild)(this.table36[this.GtkScrolledWindow3]));
-			w64.TopAttach = ((uint)(3));
-			w64.BottomAttach = ((uint)(4));
-			w64.XOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w69 = ((global::Gtk.Table.TableChild)(this.table36[this.GtkScrolledWindow3]));
+			w69.TopAttach = ((uint)(3));
+			w69.BottomAttach = ((uint)(4));
+			w69.XOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table36.Gtk.Table+TableChild
 			this.label183 = new global::Gtk.Label();
 			this.label183.Name = "label183";
 			this.label183.LabelProp = global::Mono.Unix.Catalog.GetString("Ingrese el código de oferta que desea evaluar");
 			this.table36.Add(this.label183);
-			global::Gtk.Table.TableChild w65 = ((global::Gtk.Table.TableChild)(this.table36[this.label183]));
-			w65.TopAttach = ((uint)(1));
-			w65.BottomAttach = ((uint)(2));
-			w65.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w70 = ((global::Gtk.Table.TableChild)(this.table36[this.label183]));
+			w70.TopAttach = ((uint)(1));
+			w70.BottomAttach = ((uint)(2));
+			w70.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table36.Gtk.Table+TableChild
 			this.label185 = new global::Gtk.Label();
 			this.label185.Name = "label185";
 			this.label185.LabelProp = global::Mono.Unix.Catalog.GetString("Un numero entre el 1-5 con el que desea evaluar al contrado");
 			this.table36.Add(this.label185);
-			global::Gtk.Table.TableChild w66 = ((global::Gtk.Table.TableChild)(this.table36[this.label185]));
-			w66.TopAttach = ((uint)(2));
-			w66.BottomAttach = ((uint)(3));
-			w66.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w71 = ((global::Gtk.Table.TableChild)(this.table36[this.label185]));
+			w71.TopAttach = ((uint)(2));
+			w71.BottomAttach = ((uint)(3));
+			w71.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table36.Gtk.Table+TableChild
 			this.Rankear = new global::Gtk.Button();
 			this.Rankear.CanFocus = true;
@@ -892,16 +953,16 @@ namespace gtk
 			this.Rankear.UseUnderline = true;
 			this.Rankear.Label = global::Mono.Unix.Catalog.GetString("Ingresar evaluación");
 			this.table36.Add(this.Rankear);
-			global::Gtk.Table.TableChild w67 = ((global::Gtk.Table.TableChild)(this.table36[this.Rankear]));
-			w67.TopAttach = ((uint)(2));
-			w67.BottomAttach = ((uint)(3));
-			w67.LeftAttach = ((uint)(2));
-			w67.RightAttach = ((uint)(3));
-			w67.XOptions = ((global::Gtk.AttachOptions)(0));
-			w67.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w72 = ((global::Gtk.Table.TableChild)(this.table36[this.Rankear]));
+			w72.TopAttach = ((uint)(2));
+			w72.BottomAttach = ((uint)(3));
+			w72.LeftAttach = ((uint)(2));
+			w72.RightAttach = ((uint)(3));
+			w72.XOptions = ((global::Gtk.AttachOptions)(0));
+			w72.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.notebook6.Add(this.table36);
-			global::Gtk.Notebook.NotebookChild w68 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table36]));
-			w68.Position = 4;
+			global::Gtk.Notebook.NotebookChild w73 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table36]));
+			w73.Position = 4;
 			// Notebook tab
 			this.label65 = new global::Gtk.Label();
 			this.label65.Name = "label65";
@@ -920,13 +981,13 @@ namespace gtk
 			this.CodigoOferta6.IsEditable = true;
 			this.CodigoOferta6.InvisibleChar = '●';
 			this.table37.Add(this.CodigoOferta6);
-			global::Gtk.Table.TableChild w69 = ((global::Gtk.Table.TableChild)(this.table37[this.CodigoOferta6]));
-			w69.TopAttach = ((uint)(1));
-			w69.BottomAttach = ((uint)(2));
-			w69.LeftAttach = ((uint)(1));
-			w69.RightAttach = ((uint)(2));
-			w69.XOptions = ((global::Gtk.AttachOptions)(4));
-			w69.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w74 = ((global::Gtk.Table.TableChild)(this.table37[this.CodigoOferta6]));
+			w74.TopAttach = ((uint)(1));
+			w74.BottomAttach = ((uint)(2));
+			w74.LeftAttach = ((uint)(1));
+			w74.RightAttach = ((uint)(2));
+			w74.XOptions = ((global::Gtk.AttachOptions)(4));
+			w74.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table37.Gtk.Table+TableChild
 			this.Comentario6 = new global::Gtk.Entry();
 			this.Comentario6.CanFocus = true;
@@ -934,13 +995,13 @@ namespace gtk
 			this.Comentario6.IsEditable = true;
 			this.Comentario6.InvisibleChar = '●';
 			this.table37.Add(this.Comentario6);
-			global::Gtk.Table.TableChild w70 = ((global::Gtk.Table.TableChild)(this.table37[this.Comentario6]));
-			w70.TopAttach = ((uint)(2));
-			w70.BottomAttach = ((uint)(3));
-			w70.LeftAttach = ((uint)(1));
-			w70.RightAttach = ((uint)(2));
-			w70.XOptions = ((global::Gtk.AttachOptions)(4));
-			w70.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w75 = ((global::Gtk.Table.TableChild)(this.table37[this.Comentario6]));
+			w75.TopAttach = ((uint)(2));
+			w75.BottomAttach = ((uint)(3));
+			w75.LeftAttach = ((uint)(1));
+			w75.RightAttach = ((uint)(2));
+			w75.XOptions = ((global::Gtk.AttachOptions)(4));
+			w75.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table37.Gtk.Table+TableChild
 			this.GtkScrolledWindow4 = new global::Gtk.ScrolledWindow();
 			this.GtkScrolledWindow4.Name = "GtkScrolledWindow4";
@@ -951,10 +1012,10 @@ namespace gtk
 			this.textview15.Name = "textview15";
 			this.GtkScrolledWindow4.Add(this.textview15);
 			this.table37.Add(this.GtkScrolledWindow4);
-			global::Gtk.Table.TableChild w72 = ((global::Gtk.Table.TableChild)(this.table37[this.GtkScrolledWindow4]));
-			w72.TopAttach = ((uint)(3));
-			w72.BottomAttach = ((uint)(4));
-			w72.XOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w77 = ((global::Gtk.Table.TableChild)(this.table37[this.GtkScrolledWindow4]));
+			w77.TopAttach = ((uint)(3));
+			w77.BottomAttach = ((uint)(4));
+			w77.XOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table37.Gtk.Table+TableChild
 			this.IngresarComentario = new global::Gtk.Button();
 			this.IngresarComentario.CanFocus = true;
@@ -962,32 +1023,32 @@ namespace gtk
 			this.IngresarComentario.UseUnderline = true;
 			this.IngresarComentario.Label = global::Mono.Unix.Catalog.GetString("Ingresar Comentario");
 			this.table37.Add(this.IngresarComentario);
-			global::Gtk.Table.TableChild w73 = ((global::Gtk.Table.TableChild)(this.table37[this.IngresarComentario]));
-			w73.TopAttach = ((uint)(2));
-			w73.BottomAttach = ((uint)(3));
-			w73.LeftAttach = ((uint)(2));
-			w73.RightAttach = ((uint)(3));
-			w73.XOptions = ((global::Gtk.AttachOptions)(4));
-			w73.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w78 = ((global::Gtk.Table.TableChild)(this.table37[this.IngresarComentario]));
+			w78.TopAttach = ((uint)(2));
+			w78.BottomAttach = ((uint)(3));
+			w78.LeftAttach = ((uint)(2));
+			w78.RightAttach = ((uint)(3));
+			w78.XOptions = ((global::Gtk.AttachOptions)(4));
+			w78.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table37.Gtk.Table+TableChild
 			this.label187 = new global::Gtk.Label();
 			this.label187.Name = "label187";
 			this.label187.LabelProp = global::Mono.Unix.Catalog.GetString("Código Oferta");
 			this.table37.Add(this.label187);
-			global::Gtk.Table.TableChild w74 = ((global::Gtk.Table.TableChild)(this.table37[this.label187]));
-			w74.TopAttach = ((uint)(1));
-			w74.BottomAttach = ((uint)(2));
-			w74.XOptions = ((global::Gtk.AttachOptions)(4));
-			w74.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w79 = ((global::Gtk.Table.TableChild)(this.table37[this.label187]));
+			w79.TopAttach = ((uint)(1));
+			w79.BottomAttach = ((uint)(2));
+			w79.XOptions = ((global::Gtk.AttachOptions)(4));
+			w79.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table37.Gtk.Table+TableChild
 			this.label189 = new global::Gtk.Label();
 			this.label189.Name = "label189";
 			this.label189.LabelProp = global::Mono.Unix.Catalog.GetString("Comentario");
 			this.table37.Add(this.label189);
-			global::Gtk.Table.TableChild w75 = ((global::Gtk.Table.TableChild)(this.table37[this.label189]));
-			w75.TopAttach = ((uint)(2));
-			w75.BottomAttach = ((uint)(3));
-			w75.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w80 = ((global::Gtk.Table.TableChild)(this.table37[this.label189]));
+			w80.TopAttach = ((uint)(2));
+			w80.BottomAttach = ((uint)(3));
+			w80.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table37.Gtk.Table+TableChild
 			this.VerComentables = new global::Gtk.Button();
 			this.VerComentables.CanFocus = true;
@@ -995,14 +1056,14 @@ namespace gtk
 			this.VerComentables.UseUnderline = true;
 			this.VerComentables.Label = global::Mono.Unix.Catalog.GetString("Ver Ofertas comentables");
 			this.table37.Add(this.VerComentables);
-			global::Gtk.Table.TableChild w76 = ((global::Gtk.Table.TableChild)(this.table37[this.VerComentables]));
-			w76.LeftAttach = ((uint)(1));
-			w76.RightAttach = ((uint)(2));
-			w76.XOptions = ((global::Gtk.AttachOptions)(4));
-			w76.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w81 = ((global::Gtk.Table.TableChild)(this.table37[this.VerComentables]));
+			w81.LeftAttach = ((uint)(1));
+			w81.RightAttach = ((uint)(2));
+			w81.XOptions = ((global::Gtk.AttachOptions)(4));
+			w81.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.notebook6.Add(this.table37);
-			global::Gtk.Notebook.NotebookChild w77 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table37]));
-			w77.Position = 5;
+			global::Gtk.Notebook.NotebookChild w82 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table37]));
+			w82.Position = 5;
 			// Notebook tab
 			this.label182 = new global::Gtk.Label();
 			this.label182.Name = "label182";
@@ -1024,10 +1085,10 @@ namespace gtk
 			this.textview16.Name = "textview16";
 			this.GtkScrolledWindow5.Add(this.textview16);
 			this.table2.Add(this.GtkScrolledWindow5);
-			global::Gtk.Table.TableChild w79 = ((global::Gtk.Table.TableChild)(this.table2[this.GtkScrolledWindow5]));
-			w79.LeftAttach = ((uint)(1));
-			w79.RightAttach = ((uint)(2));
-			w79.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w84 = ((global::Gtk.Table.TableChild)(this.table2[this.GtkScrolledWindow5]));
+			w84.LeftAttach = ((uint)(1));
+			w84.RightAttach = ((uint)(2));
+			w84.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table2.Gtk.Table+TableChild
 			this.GtkScrolledWindow6 = new global::Gtk.ScrolledWindow();
 			this.GtkScrolledWindow6.Name = "GtkScrolledWindow6";
@@ -1038,12 +1099,12 @@ namespace gtk
 			this.textview18.Name = "textview18";
 			this.GtkScrolledWindow6.Add(this.textview18);
 			this.table2.Add(this.GtkScrolledWindow6);
-			global::Gtk.Table.TableChild w81 = ((global::Gtk.Table.TableChild)(this.table2[this.GtkScrolledWindow6]));
-			w81.TopAttach = ((uint)(1));
-			w81.BottomAttach = ((uint)(2));
-			w81.LeftAttach = ((uint)(1));
-			w81.RightAttach = ((uint)(2));
-			w81.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w86 = ((global::Gtk.Table.TableChild)(this.table2[this.GtkScrolledWindow6]));
+			w86.TopAttach = ((uint)(1));
+			w86.BottomAttach = ((uint)(2));
+			w86.LeftAttach = ((uint)(1));
+			w86.RightAttach = ((uint)(2));
+			w86.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table2.Gtk.Table+TableChild
 			this.VerMisOfertas = new global::Gtk.Button();
 			this.VerMisOfertas.CanFocus = true;
@@ -1051,8 +1112,8 @@ namespace gtk
 			this.VerMisOfertas.UseUnderline = true;
 			this.VerMisOfertas.Label = global::Mono.Unix.Catalog.GetString("Ver mis Ofertas");
 			this.table2.Add(this.VerMisOfertas);
-			global::Gtk.Table.TableChild w82 = ((global::Gtk.Table.TableChild)(this.table2[this.VerMisOfertas]));
-			w82.XOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w87 = ((global::Gtk.Table.TableChild)(this.table2[this.VerMisOfertas]));
+			w87.XOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table2.Gtk.Table+TableChild
 			this.VerOfertasAceptadas = new global::Gtk.Button();
 			this.VerOfertasAceptadas.CanFocus = true;
@@ -1060,13 +1121,13 @@ namespace gtk
 			this.VerOfertasAceptadas.UseUnderline = true;
 			this.VerOfertasAceptadas.Label = global::Mono.Unix.Catalog.GetString("Ver Ofertas aceptadas");
 			this.table2.Add(this.VerOfertasAceptadas);
-			global::Gtk.Table.TableChild w83 = ((global::Gtk.Table.TableChild)(this.table2[this.VerOfertasAceptadas]));
-			w83.TopAttach = ((uint)(1));
-			w83.BottomAttach = ((uint)(2));
-			w83.XOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w88 = ((global::Gtk.Table.TableChild)(this.table2[this.VerOfertasAceptadas]));
+			w88.TopAttach = ((uint)(1));
+			w88.BottomAttach = ((uint)(2));
+			w88.XOptions = ((global::Gtk.AttachOptions)(4));
 			this.notebook6.Add(this.table2);
-			global::Gtk.Notebook.NotebookChild w84 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table2]));
-			w84.Position = 6;
+			global::Gtk.Notebook.NotebookChild w89 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table2]));
+			w89.Position = 6;
 			// Notebook tab
 			this.label1 = new global::Gtk.Label();
 			this.label1.Name = "label1";
@@ -1085,12 +1146,12 @@ namespace gtk
 			this.ApagarPrograma.UseUnderline = true;
 			this.ApagarPrograma.Label = global::Mono.Unix.Catalog.GetString("Apagar Programa");
 			this.table38.Add(this.ApagarPrograma);
-			global::Gtk.Table.TableChild w85 = ((global::Gtk.Table.TableChild)(this.table38[this.ApagarPrograma]));
-			w85.TopAttach = ((uint)(1));
-			w85.BottomAttach = ((uint)(2));
-			w85.LeftAttach = ((uint)(2));
-			w85.RightAttach = ((uint)(3));
-			w85.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w90 = ((global::Gtk.Table.TableChild)(this.table38[this.ApagarPrograma]));
+			w90.TopAttach = ((uint)(1));
+			w90.BottomAttach = ((uint)(2));
+			w90.LeftAttach = ((uint)(2));
+			w90.RightAttach = ((uint)(3));
+			w90.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table38.Gtk.Table+TableChild
 			this.CerrarSesion = new global::Gtk.Button();
 			this.CerrarSesion.CanFocus = true;
@@ -1098,13 +1159,13 @@ namespace gtk
 			this.CerrarSesion.UseUnderline = true;
 			this.CerrarSesion.Label = global::Mono.Unix.Catalog.GetString("Cerrar Sesión");
 			this.table38.Add(this.CerrarSesion);
-			global::Gtk.Table.TableChild w86 = ((global::Gtk.Table.TableChild)(this.table38[this.CerrarSesion]));
-			w86.TopAttach = ((uint)(1));
-			w86.BottomAttach = ((uint)(2));
-			w86.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w91 = ((global::Gtk.Table.TableChild)(this.table38[this.CerrarSesion]));
+			w91.TopAttach = ((uint)(1));
+			w91.BottomAttach = ((uint)(2));
+			w91.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.notebook6.Add(this.table38);
-			global::Gtk.Notebook.NotebookChild w87 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table38]));
-			w87.Position = 7;
+			global::Gtk.Notebook.NotebookChild w92 = ((global::Gtk.Notebook.NotebookChild)(this.notebook6[this.table38]));
+			w92.Position = 7;
 			// Notebook tab
 			this.label66 = new global::Gtk.Label();
 			this.label66.Name = "label66";
@@ -1125,6 +1186,7 @@ namespace gtk
 			this.button40.Clicked += new global::System.EventHandler(this.OnButton40Clicked);
 			this.VerPostulantes.Clicked += new global::System.EventHandler(this.OnVerPostulantesClicked);
 			this.VerOfertas3.Clicked += new global::System.EventHandler(this.OnVerOfertas3Clicked);
+			this.AceptarPostulante.Clicked += new global::System.EventHandler(this.OnAceptarPostulanteClicked);
 			this.VerBajables.Clicked += new global::System.EventHandler(this.OnVerBajablesClicked);
 			this.DarDeBaja.Clicked += new global::System.EventHandler(this.OnDarDeBajaClicked);
 			this.Rankear.Clicked += new global::System.EventHandler(this.OnRankearClicked);
